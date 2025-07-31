@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import './Select.scss';
 
 export interface SelectProps
@@ -18,6 +18,7 @@ const Select: React.FC<SelectProps> = ({
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const selectId = useId();
 
   const selectClasses = [
     'selectContainer',
@@ -28,10 +29,15 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <div className={selectClasses}>
-      {label && <label className={'label'}>{label}</label>}
-      <div className={'selectWrapper'}>
+      {label && (
+        <label className="label" htmlFor={selectId}>
+          {label}
+        </label>
+      )}
+      <div className="selectWrapper">
         <select
-          className={'select'}
+          id={selectId}
+          className="select"
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           {...props}
@@ -42,9 +48,9 @@ const Select: React.FC<SelectProps> = ({
             </option>
           ))}
         </select>
-        <span className={'arrow'}>▼</span>
+        <span className="arrow">▼</span>
       </div>
-      {helperText && <p className={'helperText'}>{helperText}</p>}
+      {helperText && <p className="helperText">{helperText}</p>}
     </div>
   );
 };
