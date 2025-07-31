@@ -37,12 +37,18 @@ const Modal: React.FC<ModalProps> = ({
     fullWidth ? 'content--fullWidth' : '',
     className,
   ].join(' ');
+
   return (
     <div className={modalClasses}>
-      <div className={'backdrop'} onClick={onClose} />
-      <div className={'content'}>
+      <div className="backdrop" onClick={onClose} />
+      <div
+        className={contentClasses}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Modal"
+      >
         <button
-          className={'closeButton'}
+          className="closeButton"
           onClick={onClose}
           aria-label="Close modal"
         >
