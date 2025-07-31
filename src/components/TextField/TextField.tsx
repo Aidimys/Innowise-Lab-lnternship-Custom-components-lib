@@ -4,7 +4,7 @@ import './TextField.scss';
 export interface TextFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
-  variant?: 'outlined'; // Можно расширить для других вариантов
+  variant?: 'outlined';
   label?: string;
   helperText?: string;
   fullWidth?: boolean;
@@ -29,9 +29,9 @@ const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <div className={textFieldClasses}>
-      {label && <label className={'label'}>{label}</label>}
-      <input className={'input'} {...props} />
-      {helperText && <p className={'helperText'}>{helperText}</p>}
+      {label && <label className="textField__label">{label}</label>}
+      <input className="textField__input" {...props} />
+      {helperText && <p className="textField__helperText">{helperText}</p>}
     </div>
   );
 };
