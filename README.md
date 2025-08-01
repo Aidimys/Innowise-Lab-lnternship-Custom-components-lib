@@ -7,5 +7,3 @@ https://drive.google.com/file/d/1C148FRnWfXVoRDslDWcYac3bEhebdIAV/view?pli=1
 npm install km-custom-components-lib
 
 import { Button, TextField, Checkbox, Modal, Switch, Select } from 'km-custom-component-library';
-
-this branch was createed for mentor check
