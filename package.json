@@ -10,12 +10,14 @@
     "access": "public"
   },
   "scripts": {
+    "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
