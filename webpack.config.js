@@ -1,22 +1,30 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.tsx',
-  mode: 'development',
+  entry: './src/index.ts',
+  mode: 'production',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.scss'],
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
       {
-        test: /\.module\.s[ac]ss$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true },
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
           },
           'sass-loader',
         ],
@@ -24,16 +32,14 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
+    library: 'KmCustomComponentsLib',
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
-  devServer: {
-    static: './dist',
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-    }),
-  ],
 };
