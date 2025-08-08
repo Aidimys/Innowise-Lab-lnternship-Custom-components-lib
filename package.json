@@ -5,6 +5,7 @@
   "types": "dist/types/index.d.ts",
   "files": [
     "dist",
+    "src",
     ".storybook",
     "tsconfig.json"
   ],
