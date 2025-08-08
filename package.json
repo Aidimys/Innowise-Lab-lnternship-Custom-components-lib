@@ -1,13 +1,10 @@
 {
   "name": "km-custom-components-lib",
-  "version": "1.1.5",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    ".storybook",
-    "tsconfig.json"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
