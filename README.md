@@ -8,4 +8,6 @@ npm install km-custom-components-lib
 
 import { Button, TextField, Checkbox, Modal, Switch, Select } from 'km-custom-components-lib';
 
-Чтобы открыть storybook перейдите на GitHub pages
+Чтобы открыть storybook перейдите на GitHub pages по ссылке
+
+https://aidimys.github.io/Innowise-Lab-lnternship-Custom-components-library/?path=/story/components-button--primary
