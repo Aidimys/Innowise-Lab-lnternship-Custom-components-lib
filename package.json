@@ -5,7 +5,8 @@
   "types": "dist/types/index.d.ts",
   "files": [
     "dist",
-    ".storybook"
+    ".storybook",
+    "tsconfig.json"
   ],
   "publishConfig": {
     "access": "public"
