@@ -8,6 +8,4 @@ npm install km-custom-components-lib
 
 import { Button, TextField, Checkbox, Modal, Switch, Select } from 'km-custom-components-lib';
 
-Чтобы открыть storybook используется команда:
-
-npm explore km-custom-components-lib -- npm run storybook
+Чтобы открыть storybook перейдите на GitHub pages
